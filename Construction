@@ -1,0 +1,34 @@
+# Assurez-vous d'avoir installé python-docx (pip install python-docx)
+
+from docx import Document
+from docx.shared import Pt
+
+# Création du document
+document = Document()
+
+# Titre principal
+document.add_heading('Plan de Recherche : Structures et Résistance des Matériaux', level=0)
+
+# Section 1
+document.add_heading('1. Le Principe de Triangulation dans les Structures', level=1)
+
+# 1.1 Définition du Principe de Triangulation
+document.add_heading('1.1 Définition du Principe de Triangulation', level=2)
+p = document.add_paragraph()
+p.add_run("Le principe de triangulation consiste à utiliser des éléments en forme de triangle dans la conception des structures afin d’assurer une rigidité géométrique intrinsèque. "
+          "Le triangle est l’unique polygone qui conserve sa forme sous l’effet de forces de traction ou de compression.").font.size = Pt(12)
+p.add_run("\n\nExemple d’équilibre :").bold = True
+p.add_run("\n∑Fₓ = 0, ∑Fᵧ = 0, ∑M = 0").font.size = Pt(12)
+p.add_run("\n\n(Suggestion : insérer un schéma d’un treillis triangulé. Lien exemple : https://www.example.com/triangulation_diagram)")
+
+# Vous pouvez continuer de la même façon pour l'ensemble des sections et sous-sections...
+# Par exemple, ajouter une section 1.2 :
+document.add_heading('1.2 Importance de la Triangulation pour la Stabilité', level=2)
+p = document.add_paragraph()
+p.add_run("La triangulation permet de répartir efficacement les charges et d’éviter les déformations excessives qui pourraient compromettre la stabilité structurelle. "
+          "Elle empêche notamment le mécanisme de déformation par parallélogramme.").font.size = Pt(12)
+
+# Ajouter d'autres sections de façon similaire...
+
+# Sauvegarder le document Word
+document.save('plan_de_recherche.docx'
